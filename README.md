@@ -1,5 +1,5 @@
-<h2 align="center">React Boilerplate</h2>
-<p align="center">React + Typescript Boilerplate with Vite</p>
+<h2 align="center">ToDos</h2>
+<p align="center">React ToDo Application</p>
 
 ---
 
@@ -14,10 +14,6 @@
 - [Introduction](#zap-introduction)
 
 - [Startup](#zap-startup)
-
-- [Changeble Points](#zap-changeble-points)
-
-- [Generate Modules/Pages](#zap-generator)
 
 - [Technologies](#zap-technologies)
 
@@ -59,19 +55,10 @@ This is a boilerplate for React Project using Atomic Design with generator
 
 ---
 
-#### :zap: Generator
-
-- Run: `yarn gen` or `npm run gen` in terminal
-
-- Follow the instructions
-
----
-
 #### :zap: Technologies
 
 ```
  ReactJS
- Axios
  Styled Components
  Styled Media Query
  React Hot Toast
