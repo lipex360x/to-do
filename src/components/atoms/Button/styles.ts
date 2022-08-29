@@ -11,26 +11,23 @@ const wrapperModifiers = {
   `,
 
   medium: () => css`
-    padding: 0.75em 1.25rem;
+    padding: 0.75em 1rem;
   `,
 
-  large: () => css`
-    padding: 1em 2rem;
-  `,
 
   default: (theme: DefaultTheme) => css`
-    background: ${theme.color['gray-600']};
+    background: ${theme.color['info-600']};
 
     &:not(:disabled):hover {
-      background: ${theme.color['gray-700']};
+      background: ${theme.color['info-500']};
     }
   `,
 
   withIcon: (theme: DefaultTheme, position: 'left' | 'right') => css`
     span {
       display: inline-block;
-      margin-left: ${position === 'left' && theme.spacing.xsmall};
-      margin-right: ${position === 'right' && theme.spacing.xsmall};
+      margin-left: ${position === 'left' && theme.spacing.xxsmall};
+      margin-right: ${position === 'right' && theme.spacing.xxsmall};
     }
     svg {
         width: 1.5rem;
@@ -61,7 +58,7 @@ export const ButtonBase = styled.button`
     justify-content: center;
     align-items: center;
 
-    color: ${theme.color.white};
+    color: ${theme.color['gray-100']};
     font-weight: ${theme.font.bold};
 
     border-radius: ${theme.border.radius.soft};

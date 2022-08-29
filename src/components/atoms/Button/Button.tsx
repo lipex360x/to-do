@@ -5,7 +5,7 @@ import * as S from './styles'
 type ButtonsTypes = ButtonHTMLAttributes<HTMLButtonElement>
 
 export type ButtonProps = {
-  size?: 'small' | 'medium' | 'large'
+  size?: 'small' | 'medium'
   variant?: 'default'
   fullWidth?: boolean
   icon?: JSX.Element
