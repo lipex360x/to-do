@@ -8,12 +8,26 @@ const error = (content: string) => {
   return toast.error(content)
 }
 
-const loading = () => {
-  return toast.loading('Aguarde...')
+const loading = (content: string) => {
+  return toast.loading(content)
+}
+
+const dismiss = () => {
+  toast.dismiss();
+}
+
+const promise = (promise: Promise<any>, content: string, success: string, error: string) => {
+  toast.promise(promise, {
+    loading: content,
+    success,
+    error,
+  });
 }
 
 export default {
   success,
   error,
-  loading
+  loading,
+  dismiss,
+  promise
 }

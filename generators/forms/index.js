@@ -2,12 +2,12 @@
 const { pushFiles } = require("../utils/generator");
 
 module.exports = {
-  description: "Generate a Page",
+  description: "Generate a Form",
   prompts: [
     {
       type: "input",
-      name: "pageName",
-      message: "Page Name",
+      name: "formName",
+      message: "Form Name",
       validate: (value) => {
         if (!value) return "Value is required";
         return true;
@@ -16,15 +16,16 @@ module.exports = {
   ],
 
   actions: (data) => {
-    const pathTemplate = "./pages/templates";
-    const pagePath = "../src/pages/{{pageName}}Page";
+    const pathTemplate = "./forms/templates";
+    const formPath = "../src/components/molecules/{{formName}}Form";
 
     const files = () => {
       const arrayFiles = [];
 
-      arrayFiles.push(pushFiles(pagePath, "index.ts", "index.hbs"));
-      arrayFiles.push(pushFiles(pagePath, "styles.ts", "styles.hbs"));
-      arrayFiles.push(pushFiles(pagePath, "{{pageName}}Page.tsx", "page.hbs"));
+      arrayFiles.push(pushFiles(formPath, "index.ts", "index.hbs"));
+      arrayFiles.push(pushFiles(formPath, "styles.ts", "styles.hbs"));
+      arrayFiles.push(pushFiles(formPath, "form.schema.ts", "form.schema.hbs"));
+      arrayFiles.push(pushFiles(formPath, "{{formName}}Form.tsx", "form.hbs"));
 
       return arrayFiles;
     };
@@ -45,7 +46,7 @@ module.exports = {
     });
 
     // Message
-    const message = () => `Page ${data.pageName} created`;
+    const message = () => `Form ${data.formName} created`;
     action.push(message);
 
     return action;
