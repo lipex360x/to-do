@@ -23,13 +23,13 @@
 
 #### :zap: Introduction
 
-This is a SPA with React + Typescript to run a Todo List 
+This is a SPA with React + Typescript to run a ToDo List Application
 
 ---
 
 #### :zap: Startup
 
-- Start project with this Templante
+- clone this repository
 
 - Install dependencies with `yarn` or `npm install`
 
@@ -44,6 +44,7 @@ This is a SPA with React + Typescript to run a Todo List
  React Hot Toast
  Styled Components
  Styled Media Query
+ Zod
  Zustand
 ```
 
