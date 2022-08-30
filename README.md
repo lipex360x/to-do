@@ -4,7 +4,7 @@
 ---
 
 <p align="center">
-  <img src="https://github.com/lipex360x/ViteTS-Boilerplate/blob/main/assets/screen.png" />
+  <img src="https://github.com/lipex360x/to-do/blob/main/assets/screen.png" />
 </p>
 
 ---
@@ -21,7 +21,7 @@
 
 #### :zap: Introduction
 
-This is a boilerplate for React Project using Atomic Design with generator
+This is a SPA with React + Typescript to run a Todo List 
 
 ---
 
