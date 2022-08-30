@@ -13,10 +13,12 @@ export const Wrapper = styled.div<WrapperProps>`
     strong {
       color: ${color === 'blue' ? theme.color.blue : theme.color.purple};
     }
+
     span {
       display: inline-block;
-      background: ${theme.color['gray-600']};
+      background: ${theme.color['gray-400']};
       font-weight: bold;
+      color: ${theme.color['gray-200']};
       padding: 0.2rem 0.6rem;
       border-radius: 50%
     }

@@ -1,8 +1,10 @@
 import { TodoBadge } from '@/components/molecules/TodoBadge'
 import { TodoItem } from '@/components/molecules/TodoItem'
+import { todoContext } from '@/contexts/todoContext'
 import * as S from './styles'
 
 export const TodoList = () => {
+  const { todos } = todoContext()
   return (
     <S.Wrapper>
       <header>
@@ -11,8 +13,9 @@ export const TodoList = () => {
       </header>
 
       <section>
-        <TodoItem />
-        <TodoItem />
+        {todos.map((todo) => (
+          <TodoItem key={todo.id} {...todo} />
+        ))}
       </section>
     </S.Wrapper>
   )
