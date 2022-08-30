@@ -16,11 +16,11 @@ const wrapperModifiers = {
 
 
   default: (theme: DefaultTheme) => css`
-    color: ${theme.color['gray-300']};
+    color: ${theme.color['gray-100']};
     background: ${theme.color['blue-dark']};
 
     &:not(:disabled):hover {
-      background: ${theme.color['gray-400']};
+      background: ${theme.color.blue};
     }
   `,
 
@@ -36,6 +36,7 @@ const wrapperModifiers = {
   `,
 
   minimal: (theme: DefaultTheme) => css`
+    color: ${theme.color['gray-300']};
     background: none;
     transition: background, color ${theme.transition.fast};
 

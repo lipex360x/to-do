@@ -5,7 +5,7 @@ export const Header = styled.header`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: ${theme.color['gray-900']};
+    background-color: ${theme.color['gray-700']};
     height: 12.5rem;
   `}
 `
