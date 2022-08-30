@@ -2,7 +2,6 @@ import create from 'zustand'
 import { produce } from 'immer'
 import { TodoDto } from '@/dtos/TodoDto'
 import storageService from '@/services/localStorage.service'
-import { TodoList } from '@/components/organisms/TodoList'
 
 type TodoContextProps = {
   todos: TodoDto[]
@@ -17,7 +16,9 @@ export const todoContext = create<TodoContextProps>((set) => ({
 
   setTodos: () => {
     set((state) => produce(state, (draft) => {
-      if (TodoList.length === 0) storageService.setItem('@todos-1.0.0', [])
+      const getTodos = storageService.getItem('@todos-1.0.0')
+      if (!getTodos) storageService.setItem('@todos-1.0.0', [])
+
       draft.todos = storageService.getItem('@todos-1.0.0')
     }))
   },
