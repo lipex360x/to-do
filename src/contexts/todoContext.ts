@@ -1,9 +1,11 @@
-import { TodoDto } from '@/dtos/TodoDto'
-import { produce } from 'immer'
 import create from 'zustand'
+import { produce } from 'immer'
+import { TodoDto } from '@/dtos/TodoDto'
+import storageService from '@/services/localStorage.service'
 
 type TodoContextProps = {
   todos: TodoDto[]
+  setTodos: () => void
   addTodo: (todo: string) => void
   setIsDone: (id: string) => void
   removeTodo: (id: string) => void
@@ -11,6 +13,12 @@ type TodoContextProps = {
 
 export const todoContext = create<TodoContextProps>((set) => ({
   todos: [],
+
+  setTodos: () => {
+    set((state) => produce(state, (draft) => {
+      draft.todos = storageService.getItem('@todos-1.0.0')
+    }))
+  },
 
   addTodo: (todo: string) => {
     const newTodo = {
@@ -21,6 +29,7 @@ export const todoContext = create<TodoContextProps>((set) => ({
 
     set((state) => produce(state, (draft) => {
       draft.todos.push(newTodo)
+      storageService.setItem('@todos-1.0.0', draft.todos)
     }))
   },
 
@@ -32,11 +41,10 @@ export const todoContext = create<TodoContextProps>((set) => ({
       return produce(state, (draft) => {
         const TodoState = draft.todos[getIndex].hasDone
         draft.todos[getIndex].hasDone = !TodoState
+        storageService.setItem('@todos-1.0.0', draft.todos)
       })
     })
   },
-
-
 
   removeTodo: (id: string) => {
     set((state) => {
@@ -45,6 +53,7 @@ export const todoContext = create<TodoContextProps>((set) => ({
 
       return produce(state, (draft) => {
         draft.todos = state.todos.filter(todo => todo.id !== id)
+        storageService.setItem('@todos-1.0.0', draft.todos)
       })
     })
   }
