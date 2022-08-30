@@ -7,7 +7,7 @@ export const Input = styled.input`
     align-items: center;
     justify-content: center;
     appearance: none;
-    width: 23px;
+    width: 20px;
     height: 20px;
     border: 2px solid ${theme.color.blue};
     border-radius: 50%;

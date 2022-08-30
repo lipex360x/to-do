@@ -7,8 +7,10 @@ import formSchema, { FormInputs } from './form.schema'
 
 import * as S from './styles'
 import { PlusCircle } from 'phosphor-react'
+import { todoContext } from '@/contexts/todoContext'
 
 export const TodoForm = () => {
+  const { addTodo } = todoContext()
   const {
     register,
     handleSubmit,
@@ -18,13 +20,9 @@ export const TodoForm = () => {
     resolver: zodResolver(formSchema)
   })
 
-  const submitForm = async (data: FormInputs) => {
-    toastService.loading('aguarde...')
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-
-    toastService.dismiss()
-    toastService.success(`enviado: ${data.name}`,)
-
+  const submitForm = ({ todo }: FormInputs) => {
+    toastService.success('Tarefa registrada com sucesso')
+    addTodo(todo)
     reset()
   }
 
@@ -33,7 +31,7 @@ export const TodoForm = () => {
       <TextField
         placeholder='Type text'
         required
-        {...register('name')}
+        {...register('todo')}
       />
 
       <Button

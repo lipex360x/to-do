@@ -3,26 +3,27 @@ import { produce } from 'immer'
 import create from 'zustand'
 
 type TodoContextProps = {
-  todos: TodoDto[] | []
-  finishTodo: (id: string) => void
+  todos: TodoDto[]
+  removeTodo: (id: string) => void
+  addTodo: (todo: string) => void
 }
 
 export const todoContext = create<TodoContextProps>((set) => ({
-  todos: [
-    {
-      id: '1',
-      todo: 'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
+  todos: [],
+
+  addTodo: (todo: string) => {
+    const newTodo = {
+      id: new Date().toISOString(),
+      todo,
       hasDone: false
-    },
-
-    {
-      id: '2',
-      todo: 'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-      hasDone: true
     }
-  ],
 
-  finishTodo: (id: string) => {
+    set((state) => produce(state, (draft) => {
+      draft.todos.push(newTodo)
+    }))
+  },
+
+  removeTodo: (id: string) => {
     set((state) => {
       const getIndex = state.todos.findIndex((todo) => todo.id === id)
 

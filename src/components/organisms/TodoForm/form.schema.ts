@@ -1,7 +1,7 @@
 import * as z from 'zod'
 
 const formSchema = z.object({
-  name: z.string()
+  todo: z.string()
 })
 
 export default formSchema

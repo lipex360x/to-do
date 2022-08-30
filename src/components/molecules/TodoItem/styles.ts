@@ -24,6 +24,10 @@ export const Wrapper = styled.div<WrapperProps>`
     border-radius: 8px;
     padding: 1rem;
 
+    span {
+      flex: 1;
+    }
+
     ${isDone && wrapperModifiers.done(theme)}
   `}
 `

@@ -14,16 +14,15 @@ type TodoItemProps = {
 
 export const TodoItem = ({ id, hasDone, todo }: TodoItemProps) => {
   const [done, setDone] = useState(hasDone)
-  const { finishTodo } = todoContext()
+  const { removeTodo } = todoContext()
 
   const handleDone = () => {
-    console.log('done id', id)
     setDone(!done)
   }
 
   const handleDelete = () => {
-    finishTodo(id)
-    toastService.success('Tarefa Finalizada')
+    removeTodo(id)
+    toastService.success('Tarefa Removida')
   }
 
   return (

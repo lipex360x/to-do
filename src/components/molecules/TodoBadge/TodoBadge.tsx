@@ -3,7 +3,7 @@ import * as S from './styles'
 export type TodoBadgeProps = {
   color: 'blue' | 'purple'
   text: string
-  total: number
+  total: string
 }
 
 export const TodoBadge = ({ color, text, total }: TodoBadgeProps) => {

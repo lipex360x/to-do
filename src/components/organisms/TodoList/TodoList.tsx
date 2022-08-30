@@ -5,11 +5,17 @@ import * as S from './styles'
 
 export const TodoList = () => {
   const { todos } = todoContext()
+
+  const getFinished = () => {
+    const finished = todos.filter((todo) => todo.hasDone).length
+    return `${finished} de ${todos.length}`
+  }
+
   return (
     <S.Wrapper>
       <header>
-        <TodoBadge color='blue' text='Tarefas criadas' total={0} />
-        <TodoBadge color='purple' text='Concluídas' total={0} />
+        <TodoBadge color='blue' text='Tarefas criadas' total={todos.length.toString()} />
+        <TodoBadge color='purple' text='Concluídas' total={getFinished()} />
       </header>
 
       <section>
