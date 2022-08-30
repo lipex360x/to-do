@@ -7,7 +7,7 @@ export type WrapperProps = {
 
 const wrapperModifiers = {
   small: () => css`
-    padding: 0.5rem 1.25rem;
+    padding: 0.5rem;
   `,
 
   medium: () => css`
@@ -16,10 +16,11 @@ const wrapperModifiers = {
 
 
   default: (theme: DefaultTheme) => css`
-    background: ${theme.color['info-600']};
+    color: ${theme.color['gray-300']};
+    background: ${theme.color['blue-dark']};
 
     &:not(:disabled):hover {
-      background: ${theme.color['info-500']};
+      background: ${theme.color['gray-400']};
     }
   `,
 
@@ -36,13 +37,11 @@ const wrapperModifiers = {
 
   minimal: (theme: DefaultTheme) => css`
     background: none;
-    color: ${theme.color['gray-300']};
-    border: 2px solid ${theme.color['gray-500']};
     transition: background, color ${theme.transition.fast};
 
     &:not(:disabled):hover{
-      color: ${theme.color.white};
-      background: ${theme.color['gray-500']};
+      color: ${theme.color.danger};
+      background: ${theme.color['gray-400']};
     }
   `,
 
