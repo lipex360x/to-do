@@ -35,34 +35,14 @@ This is a boilerplate for React Project using Atomic Design with generator
 
 ---
 
-#### :zap: Changeble points
-
-- Configure **Project Name** in `./package.json`
-
-- Configure **Project Title in** `./index.html`
-
-- Configure **Theme Styles** in `src/styles/constants`
-
-- Configure **Global Styles** in `src/styles/global.ts`
-
-- Configure **Theme** in `src/styles/themes/default.ts`
-
-- Rename `.env.example` to `.env` and change API address
-
-- Change **README.md**
-
-- Change **Screen Example** in `./assets/screen.png`
-
----
-
 #### :zap: Technologies
 
 ```
- ReactJS
+ Immer
+ React Hot Toast
  Styled Components
  Styled Media Query
- React Hot Toast
- Plop
+ Zustand
 ```
 
 ---

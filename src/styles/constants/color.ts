@@ -1,11 +1,14 @@
 export default {
   black: '#1d1d1b',
   white: '#FFF',
-  purple: '#8284FA',
+
+  'purple': '#8284FA',
   'purple-dark': '#5E60CE',
-  blue: '#4EA8DE',
+
+  'blue': '#4EA8DE',
   'blue-dark': '#1E6F9F',
-  danger: '#E25858',
+
+  'danger': '#E25858',
 
   'gray-100': '#F2F2F2',
   'gray-200': '#D9D9D9',
@@ -15,13 +18,4 @@ export default {
   'gray-600': '#1A1A1A',
   'gray-700': '#0D0D0D',
 
-  "primary-100": "#CAECFD",
-  "primary-200": "#96D5FB",
-  "primary-300": "#61B6F3",
-  "primary-400": "#3A96E8",
-  "primary-500": "#0069D9",
-  "primary-600": "#0051BA",
-  "primary-700": "#003C9C",
-  "primary-800": "#002A7D",
-  "primary-900": "#001E68",
 } as const

@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.div`
-  ${({ theme }) => css`
+  ${() => css`
     header {
       display: flex;
       margin-top: 4rem;

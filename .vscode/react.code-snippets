@@ -1,0 +1,23 @@
+{
+  "Template Snippets": {
+    "prefix": "snippetTemplate",
+    "body": [
+      "\"${1:SNIPPET_TITLE}\": {",
+      "  \"prefix\": \"${2:PREFIX}\",",
+      "  \"body\": [",
+      "    \"${3:BODY}\"",
+      "  ]",
+      "},",
+      ""
+    ]
+  },
+
+  "CSS Export Const": {
+    "prefix": "cssExportConst",
+    "body": [
+      "export const ${CONST_NAME} = styled.div`",
+      "  ${() => css``}",
+      "`"
+    ]
+  }
+}
