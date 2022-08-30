@@ -17,6 +17,8 @@
 
 - [Technologies](#zap-technologies)
 
+- [Live Preview](https://papaya-queijadas-ecb209.netlify.app/)
+
 ---
 
 #### :zap: Introduction
