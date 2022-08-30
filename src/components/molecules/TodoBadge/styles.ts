@@ -20,7 +20,7 @@ export const Wrapper = styled.div<WrapperProps>`
       font-weight: bold;
       color: ${theme.color['gray-200']};
       padding: 0.2rem 0.6rem;
-      border-radius: 50%
+      border-radius: ${theme.border.radius.soft}
     }
   `}
 `

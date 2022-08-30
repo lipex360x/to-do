@@ -14,9 +14,10 @@ type TodoItemProps = {
 
 export const TodoItem = ({ id, hasDone, todo }: TodoItemProps) => {
   const [done, setDone] = useState(hasDone)
-  const { removeTodo } = todoContext()
+  const { removeTodo, setIsDone } = todoContext()
 
   const handleDone = () => {
+    setIsDone(id)
     setDone(!done)
   }
 

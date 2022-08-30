@@ -21,7 +21,7 @@ export const TodoForm = () => {
   })
 
   const submitForm = ({ todo }: FormInputs) => {
-    toastService.success('Tarefa registrada com sucesso')
+    toastService.success('Tarefa registrada')
     addTodo(todo)
     reset()
   }
